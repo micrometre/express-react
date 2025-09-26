@@ -1,0 +1,15 @@
+{
+  "name": "express-react-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:client\"",
+    "dev:api": "npm run --prefix api dev",
+    "dev:client": "npm run --prefix client start",
+    "build": "npm run build --prefix client && npm run build --prefix api",
+    "postinstall": "npm install --prefix api && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
