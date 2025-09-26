@@ -6,7 +6,8 @@
     "dev": "PORT=3001 nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
