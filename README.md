@@ -1,4 +1,4 @@
-# Express + React Monorepo for Vercel
+# Express and React in Monorepo for Vercel
 
 This is a sample project that demonstrates how to create a monolithic Express and React application that can be deployed to Vercel.
 
