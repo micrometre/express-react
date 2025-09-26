@@ -1,18 +1,10 @@
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose()
+const { db } = require('./db');
+
 const app = express();
 
 const port = process.env.PORT || 3001;
 
-
-// Open the database and make it available via app.locals
-const db = new sqlite3.Database('file.db', (err) => {
-  if (err) {
-    console.error('Could not connect to database', err);
-  } else {
-    db.run(`CREATE TABLE IF NOT EXISTS lorem (info TEXT)`);
-  }
-});
 
 // Make db accessible in routes via req.app.locals.db
 app.locals.db = db;
@@ -25,6 +17,7 @@ app.get('/api/hello', (req, res) => {
       res.status(500).send('Error retrieving data');
     } else {
       res.json(rows);
+      console.log(rows);
     }
   });
 });
